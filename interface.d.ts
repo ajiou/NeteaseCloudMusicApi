@@ -694,6 +694,14 @@ export function login_cellphone(
   } & RequestBaseConfig,
 ): Promise<Response>
 
+export function login_cellphone(
+  params: {
+    phone: number | string
+    countrycode?: number | string
+    captcha: number | string
+  } & RequestBaseConfig,
+): Promise<Response>
+
 export function login_refresh(params: RequestBaseConfig): Promise<Response>
 
 export function login_status(params: RequestBaseConfig): Promise<Response>
@@ -1367,7 +1375,14 @@ export function artist_detail(
   } & RequestBaseConfig,
 ): Promise<Response>
 
-export function cloud(params: RequestBaseConfig): Promise<Response>
+export function cloud(
+  params: {
+    songFile: {
+      name: string
+      data: Buffer
+    }
+  } & RequestBaseConfig,
+): Promise<Response>
 
 export function topic_detail(
   params: {
@@ -1428,3 +1443,94 @@ export function cloud_match(
     asid: number | string
   } & RequestBaseConfig,
 ): Promise<Response>
+
+export function yunbei_rcmd_song(
+  params: {
+    id: number | string
+    reason?: number | string
+  } & RequestBaseConfig,
+): Promise<Response>
+
+export function yunbei_rcmd_song_history(
+  params: {
+    size?: number | string
+    cursor?: number | string
+  } & RequestBaseConfig,
+): Promise<Response>
+
+export function song_purchased(
+  params: MultiPageConfig & RequestBaseConfig,
+): Promise<Response>
+
+export function mlog_url(
+  params: {
+    id?: number | string
+    res?: number | string
+  } & RequestBaseConfig,
+): Promise<Response>
+
+export function mlog_to_video(
+  params: {
+    id?: number | string
+  } & RequestBaseConfig,
+): Promise<Response>
+
+export function vip_growthpoint(params: RequestBaseConfig): Promise<Response>
+
+export function vip_growthpoint_details(
+  params: MultiPageConfig & RequestBaseConfig,
+): Promise<Response>
+
+export function vip_tasks(params: RequestBaseConfig): Promise<Response>
+
+export function vip_growthpoint_get(
+  params: {
+    ids?: number | string
+  } & RequestBaseConfig,
+): Promise<Response>
+
+export function artist_fans(
+  params: {
+    id: number | string
+    limit?: number | string
+    offset?: number | string
+  } & RequestBaseConfig,
+): Promise<Response>
+
+export function digitalAlbum_detail(
+  params: {
+    id: number | string
+  } & RequestBaseConfig,
+): Promise<Response>
+
+export function digitalAlbum_sales(
+  params: {
+    ids: number | string
+  } & RequestBaseConfig,
+): Promise<Response>
+
+export function musician_data_overview(
+  params: RequestBaseConfig,
+): Promise<Response>
+
+export function musician_play_trend(
+  params: {
+    startTime: number | string
+    endTime: number | string
+  } & RequestBaseConfig,
+): Promise<Response>
+
+export function musician_tasks(params: RequestBaseConfig): Promise<Response>
+
+export function musician_cloudbean(params: RequestBaseConfig): Promise<Response>
+
+export function musician_cloudbean_obtain(
+  params: {
+    id: number | string
+    period: number | string
+  } & RequestBaseConfig,
+): Promise<Response>
+
+export function vip_info(params: RequestBaseConfig): Promise<Response>
+
+export function musician_sign(params: RequestBaseConfig): Promise<Response>
